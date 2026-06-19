@@ -1,8 +1,15 @@
+import Login from './components/Login';
+import Signup from './components/Signup';
+
 function App() {
   return (
-    <div className="bg-blue-500 text-white p-10 text-center text-3xl font-bold">
-      SmartLend P2P Platform Ready!
+    <div>
+      {/* Abhi ke liye hum dono components ek ke neeche ek dikha rahe hain */}
+      <Login />
+      <hr className="border-4 border-slate-200" />
+      <Signup />
     </div>
   )
 }
-export default App
+
+export default App;
