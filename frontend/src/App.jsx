@@ -1,13 +1,10 @@
-import Login from './components/Login';
-import Signup from './components/Signup';
+import Landing from './components/Landing';
+// (Login aur Signup import abhi hata do ya comment kar do)
 
 function App() {
   return (
     <div>
-      {/* Abhi ke liye hum dono components ek ke neeche ek dikha rahe hain */}
-      <Login />
-      <hr className="border-4 border-slate-200" />
-      <Signup />
+      <Landing />
     </div>
   )
 }
