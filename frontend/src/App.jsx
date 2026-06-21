@@ -2,19 +2,17 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Landing from './components/Landing';
 import Login from './components/Login';
 import Signup from './components/Signup';
+import BorrowerDashboard from './components/BorrowerDashboard'; // <--- Yeh Naya Import kiya
 
 function App() {
   return (
     <Router>
       <Routes>
-        {/* Jab URL '/' hoga, tab Landing page dikhega */}
         <Route path="/" element={<Landing />} />
-        
-        {/* Jab URL '/login' hoga, tab Login page dikhega */}
         <Route path="/login" element={<Login />} />
-        
-        {/* Jab URL '/signup' hoga, tab Signup page dikhega */}
         <Route path="/signup" element={<Signup />} />
+        {/* Naya Route Dashboard ke liye */}
+        <Route path="/dashboard/borrower" element={<BorrowerDashboard />} />
       </Routes>
     </Router>
   );
