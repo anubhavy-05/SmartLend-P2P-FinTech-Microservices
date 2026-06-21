@@ -1,4 +1,9 @@
+import { Link, useNavigate } from 'react-router-dom';
+
 export default function Login() {
+  // Navigation hook initialize kiya
+  const navigate = useNavigate();
+
   return (
     <div className="min-h-screen flex items-center justify-center bg-slate-50">
       <div className="max-w-md w-full bg-white p-8 rounded-xl shadow-lg border border-slate-100">
@@ -13,7 +18,7 @@ export default function Login() {
             <input 
               type="email" 
               placeholder="you@example.com"
-              className="w-full px-4 py-2 border border-slate-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:outline-none"
+              className="w-full px-4 py-2 border border-slate-300 rounded-lg focus:ring-2 focus:ring-purple-500 focus:outline-none"
             />
           </div>
 
@@ -22,20 +27,22 @@ export default function Login() {
             <input 
               type="password" 
               placeholder="••••••••"
-              className="w-full px-4 py-2 border border-slate-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:outline-none"
+              className="w-full px-4 py-2 border border-slate-300 rounded-lg focus:ring-2 focus:ring-purple-500 focus:outline-none"
             />
           </div>
 
+          {/* Yahan onClick event add kiya gaya hai */}
           <button 
             type="button"
-            className="w-full bg-blue-600 text-white font-semibold py-2 px-4 rounded-lg hover:bg-blue-700 transition duration-200"
+            onClick={() => navigate('/dashboard/borrower')}
+            className="w-full bg-purple-600 text-white font-semibold py-2 px-4 rounded-lg hover:bg-purple-700 transition duration-200"
           >
             Sign In
           </button>
         </form>
 
         <p className="text-center text-sm text-slate-600 mt-6">
-          Don't have an account? <span className="text-blue-600 font-semibold cursor-pointer">Sign up here</span>
+          Don't have an account? <Link to="/signup" className="text-purple-600 font-semibold cursor-pointer hover:underline">Sign up here</Link>
         </p>
       </div>
     </div>
