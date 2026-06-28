@@ -18,33 +18,52 @@ export default function BorrowerDashboard() {
 
       <div className="max-w-7xl mx-auto px-4 py-8 grid grid-cols-1 lg:grid-cols-3 gap-8">
         
-        {/* Left Column: Apply for Loan Form (ML Inputs) */}
+        {/* Left Column: Apply for Loan Form */}
         <div className="lg:col-span-2 bg-white p-8 rounded-xl shadow-sm border border-slate-200">
           <h2 className="text-2xl font-bold text-slate-800 mb-6">Apply for a New Loan</h2>
           <p className="text-sm text-slate-500 mb-6">Our AI will assess your request instantly based on these details.</p>
           
           <form className="space-y-6">
+            {/* Ab is grid mein 6 items ho gaye hain */}
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-              {/* ML Feature 1: Requested Amount */}
+              
               <div>
                 <label className="block text-sm font-medium text-slate-700 mb-1">Requested Amount (₹)</label>
                 <input type="number" placeholder="e.g. 10000" className="w-full px-4 py-2 border border-slate-300 rounded-lg focus:ring-2 focus:ring-teal-500 focus:outline-none" />
               </div>
-              {/* ML Feature 2: Monthly Income */}
+              
               <div>
                 <label className="block text-sm font-medium text-slate-700 mb-1">Monthly Income (₹)</label>
                 <input type="number" placeholder="e.g. 45000" className="w-full px-4 py-2 border border-slate-300 rounded-lg focus:ring-2 focus:ring-teal-500 focus:outline-none" />
               </div>
-              {/* ML Feature 3: Current EMIs */}
+              
               <div>
                 <label className="block text-sm font-medium text-slate-700 mb-1">Current Active EMIs (₹/month)</label>
                 <input type="number" placeholder="e.g. 2500" className="w-full px-4 py-2 border border-slate-300 rounded-lg focus:ring-2 focus:ring-teal-500 focus:outline-none" />
               </div>
-              {/* ML Feature 4: Employment Duration */}
+              
               <div>
                 <label className="block text-sm font-medium text-slate-700 mb-1">Employment Duration (Years)</label>
                 <input type="number" step="0.5" placeholder="e.g. 2.5" className="w-full px-4 py-2 border border-slate-300 rounded-lg focus:ring-2 focus:ring-teal-500 focus:outline-none" />
               </div>
+
+              {/* NAYA FIELD: Loan Tenure */}
+              <div>
+                <label className="block text-sm font-medium text-slate-700 mb-1">Preferred Tenure (Months)</label>
+                <select className="w-full px-4 py-2 border border-slate-300 rounded-lg focus:ring-2 focus:ring-teal-500 focus:outline-none bg-white">
+                  <option value="6">6 Months</option>
+                  <option value="12">12 Months</option>
+                  <option value="24">24 Months</option>
+                  <option value="36">36 Months</option>
+                </select>
+              </div>
+
+              {/* NAYA FIELD: Interest Rate */}
+              <div>
+                <label className="block text-sm font-medium text-slate-700 mb-1">Expected Interest Rate (% p.a.)</label>
+                <input type="number" step="0.1" placeholder="e.g. 12.5" className="w-full px-4 py-2 border border-slate-300 rounded-lg focus:ring-2 focus:ring-teal-500 focus:outline-none" />
+              </div>
+
             </div>
 
             <div>
@@ -57,7 +76,7 @@ export default function BorrowerDashboard() {
               </select>
             </div>
 
-            {/* Dummy Document Upload for UI */}
+            {/* Dummy Document Upload */}
             <div className="p-4 border-2 border-dashed border-slate-300 rounded-lg text-center hover:bg-slate-50 transition cursor-pointer">
               <p className="text-sm font-medium text-slate-600 mb-1">Upload Bank Statement (Last 3 Months)</p>
               <p className="text-xs text-slate-400 mb-3">PDF or Image up to 5MB</p>
@@ -72,7 +91,6 @@ export default function BorrowerDashboard() {
 
         {/* Right Column: Status & Stats */}
         <div className="space-y-6">
-          {/* Active Loan Card */}
           <div className="bg-white p-6 rounded-xl shadow-sm border border-slate-200">
             <h3 className="text-lg font-bold text-slate-800 mb-4">Active Loan Status</h3>
             <div className="flex justify-between items-center mb-2">
@@ -83,6 +101,10 @@ export default function BorrowerDashboard() {
               <span className="text-slate-500">Amount Borrowed</span>
               <span className="font-semibold text-slate-800">₹15,000</span>
             </div>
+            <div className="flex justify-between items-center mb-2">
+              <span className="text-slate-500">Interest Rate</span>
+              <span className="font-semibold text-slate-800">12% p.a.</span>
+            </div>
             <div className="flex justify-between items-center">
               <span className="text-slate-500">Next EMI</span>
               <span className="font-semibold text-slate-800">₹1,500 (5th July)</span>
@@ -92,7 +114,6 @@ export default function BorrowerDashboard() {
             </button>
           </div>
 
-          {/* AI Trust Badge */}
           <div className="bg-gradient-to-br from-purple-50 to-teal-50 p-6 rounded-xl border border-purple-100">
             <div className="flex items-center space-x-3 mb-2">
               <span className="text-2xl">🛡️</span>
